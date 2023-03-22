@@ -1,10 +1,11 @@
-function createTitle() {
-  
+function createTitle(titleName) {
+  let title = `The ${titleName}`
+  return title
 }
 
 module.exports = {
   createTitle,
-  // buildMainCharacter,
+  buildMainCharacter,
   // saveReview,
   // calculatePageCount,
   // writeBook,
