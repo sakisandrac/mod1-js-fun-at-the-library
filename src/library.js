@@ -22,7 +22,7 @@ function addBook(library, book){
 
 function checkoutBook(library, title, genre){
   if(genre === 'fantasy'){
-    for (let i=0; i < library.shelves.fantasy.length; i++){
+    for (var i=0; i < library.shelves.fantasy.length; i++){
       if(library.shelves.fantasy[i].title.includes(title)){
         var index = library.shelves.fantasy.indexOf(title);
         library.shelves.fantasy.splice(index, 1);
@@ -31,7 +31,7 @@ function checkoutBook(library, title, genre){
       } return `Sorry, there are currently no copies of ${title} available at the Denver Public Library.`;
   } 
   if(genre === 'fiction'){
-    for (let i=0; i < library.shelves.fiction.length; i++){
+    for (var i=0; i < library.shelves.fiction.length; i++){
       if(library.shelves.fiction[i].title.includes(title)){
         var index = library.shelves.fiction.indexOf(title);
         library.shelves.fiction.splice(index, 1);
@@ -40,7 +40,7 @@ function checkoutBook(library, title, genre){
     } return `Sorry, there are currently no copies of ${title} available at the Denver Public Library.`;
   } 
   if(genre === 'nonFiction'){
-    for (let i=0; i < library.shelves.nonFiction.length; i++){
+    for (var i=0; i < library.shelves.nonFiction.length; i++){
       if(library.shelves.nonFiction[i].title.includes(title)){
         var index = library.shelves.nonFiction.indexOf(title);
         library.shelves.nonFiction.splice(index, 1);
@@ -53,18 +53,18 @@ function checkoutBook(library, title, genre){
 
 function takeStock(library, genre){
   if(genre === 'fantasy'){
-    let stock = library.shelves.fantasy.length
+    var stock = library.shelves.fantasy.length
     return `There are a total of ${stock} ${genre} books at the ${library.name}.`
   } 
   if(genre === 'fiction'){
-    let stock = library.shelves.fiction.length
+    var stock = library.shelves.fiction.length
     return `There are a total of ${stock} ${genre} books at the ${library.name}.`
   }
   if(genre === 'nonFiction'){
-    let stock = library.shelves.nonFiction.length
+    var stock = library.shelves.nonFiction.length
     return `There are a total of ${stock} ${genre} books at the ${library.name}.`
   }
-  let stock = library.shelves['fantasy'].length + library.shelves['fiction'].length + library.shelves['nonFiction'].length
+  var stock = library.shelves['fantasy'].length + library.shelves['fiction'].length + library.shelves['nonFiction'].length
   return `There are a total of ${stock} books at the ${library.name}.`
 }
 
