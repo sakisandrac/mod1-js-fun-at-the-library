@@ -1,10 +1,10 @@
 function createTitle(titleName) {
-  let title = `The ${titleName}`;
+ var title = `The ${titleName}`;
   return title;
 }
 
 function buildMainCharacter(name, age, pronouns){
-  let mainCharacter = {
+ var mainCharacter = {
     name: name,
     age: age,
     pronouns: pronouns
@@ -35,7 +35,7 @@ function calculatePageCount(title){
 // the test already runs the createTitle and createMainCharacter function for me, just have to add those as the params
 
 function writeBook(bookTitle, bookCharacter, genre){
- let newBook = {
+ var newBook = {
   title: bookTitle,
   mainCharacter: bookCharacter,
   pageCount: calculatePageCount(bookTitle),
