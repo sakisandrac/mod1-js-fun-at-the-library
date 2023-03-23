@@ -13,13 +13,14 @@ function unshelfBook(name, shelf){
  }
 
 //  function listTitles(shelf){
+//   var titles = [];
 //   for (var i=0; i < shelf.length; i++){  
-//     shelf[i].title
-//   } 
+//    titles.push(shelf[i].title)
+//   } return titles.join(", ");
 // }
 
 function listTitles(shelf){
-  var titles = shelf.map(function(book){
+  var titles = shelf.map((book)=> {
     return book.title
   })
   return titles.join(", ");
