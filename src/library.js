@@ -27,7 +27,7 @@ function checkoutBook(library, title, genre){
         library.shelves.fantasy.splice(i, 1);
         return `You have now checked out ${title} from the ${library.name}.`
       }
-      } return `Sorry, there are currently no copies of ${title} available at the Denver Public Library.`;
+      } return `Sorry, there are currently no copies of ${title} available at the ${library.name}.`;
   } 
   if(genre === 'fiction'){
     for (var i=0; i < library.shelves.fiction.length; i++){
@@ -35,7 +35,7 @@ function checkoutBook(library, title, genre){
         library.shelves.fiction.splice(i, 1);
         return `You have now checked out ${title} from the ${library.name}.`
       } 
-    } return `Sorry, there are currently no copies of ${title} available at the Denver Public Library.`;
+    } return `Sorry, there are currently no copies of ${title} available at the ${library.name}.`;
   } 
   if(genre === 'nonFiction'){
     for (var i=0; i < library.shelves.nonFiction.length; i++){
@@ -43,9 +43,9 @@ function checkoutBook(library, title, genre){
         library.shelves.nonFiction.splice(i, 1);
         return `You have now checked out ${title} from the ${library.name}.`
       }
-    } return `Sorry, there are currently no copies of ${title} available at the Denver Public Library.`;
+    } return `Sorry, there are currently no copies of ${title} available at the ${library.name}.`;
   } 
-  return `Sorry, there are currently no copies of ${title} available at the Denver Public Library.`;
+  return `Sorry, there are currently no copies of ${title} available at the ${library.name}.`;
 }
 
 function takeStock(library, genre){
