@@ -24,8 +24,7 @@ function checkoutBook(library, title, genre){
   if(genre === 'fantasy'){
     for (var i=0; i < library.shelves.fantasy.length; i++){
       if(library.shelves.fantasy[i].title.includes(title)){
-        var index = library.shelves.fantasy.indexOf(title);
-        library.shelves.fantasy.splice(index, 1);
+        library.shelves.fantasy.splice(i, 1);
         return `You have now checked out ${title} from the ${library.name}.`
       }
       } return `Sorry, there are currently no copies of ${title} available at the Denver Public Library.`;
@@ -33,8 +32,7 @@ function checkoutBook(library, title, genre){
   if(genre === 'fiction'){
     for (var i=0; i < library.shelves.fiction.length; i++){
       if(library.shelves.fiction[i].title.includes(title)){
-        var index = library.shelves.fiction.indexOf(title);
-        library.shelves.fiction.splice(index, 1);
+        library.shelves.fiction.splice(i, 1);
         return `You have now checked out ${title} from the ${library.name}.`
       } 
     } return `Sorry, there are currently no copies of ${title} available at the Denver Public Library.`;
@@ -42,8 +40,7 @@ function checkoutBook(library, title, genre){
   if(genre === 'nonFiction'){
     for (var i=0; i < library.shelves.nonFiction.length; i++){
       if(library.shelves.nonFiction[i].title.includes(title)){
-        var index = library.shelves.nonFiction.indexOf(title);
-        library.shelves.nonFiction.splice(index, 1);
+        library.shelves.nonFiction.splice(i, 1);
         return `You have now checked out ${title} from the ${library.name}.`
       }
     } return `Sorry, there are currently no copies of ${title} available at the Denver Public Library.`;
