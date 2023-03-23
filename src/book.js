@@ -18,49 +18,15 @@ function buildMainCharacter(name, age, pronouns){
 // loop through the array to check
 // if review is unique, add to the array
 
-// let reviews = [];
-// function saveReview(review){
-//   reviews.push(review)
-//   for (let i=0; i < reviews.length; i++){
-//     if(review !== reviews[i]){
-//       return newReviews
-//     } else {
-//       return reviews
-//     }
-// }
-// }
+//remove the array i created because the test already creates one i just need to push into it
 
-// this works- pushes new reviews into an empty array and saves the,
-let reviews = [];
-function saveReviewOne(review){
-  reviews.push(review)
-  return reviews
+//this pases all but the 2nd test 
+function saveReview(review, reviews){
+    if(!reviews.includes(review)){
+      reviews.push(review);
+      return reviews;
+    }
 }
-
-// function checkReview(){
-//   for (let i=0; i < reviews.length; i++){
-//     if(reviews[i] !== reviews[i]){
-//       console.log('all good')
-//     } else {
-//       console.log('same')
-//     }
-//   }
-// }
-// function saveReview(review){
-  
-// }
-
-// let reviews = [];
-// function saveReview(review){
-//   reviews.push(review)
-//   for (let i=0; i <reviews.length; i++){
-//     if(review !== reviews[i]){
-//       return reviews
-//     } else {
-//       console.log('do not add')
-//     }
-//   }
-// }
 
 function calculatePageCount(title){
   return title.length * 20;
@@ -86,7 +52,7 @@ function editBook(book){
 module.exports = {
   createTitle,
   buildMainCharacter,
-  // saveReview,
+  saveReview,
   calculatePageCount,
   writeBook,
   editBook
