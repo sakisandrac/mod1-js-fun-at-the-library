@@ -65,15 +65,33 @@ function checkoutBook(library, title, genre){
 //   return `There are a total of ${stock} books at the ${library.name}.`
 // }
 
+// function takeStock(library, genre){
+//   if(genre){
+//     var stock = library.shelves[genre].length;
+//     return `There are a total of ${stock} ${genre} books at the ${library.name}.`
+//   } else {
+//     var stock = library.shelves.fantasy.length + library.shelves.fiction.length + library.shelves.nonFiction.length;
+//     return `There are a total of ${stock} books at the ${library.name}.`
+//   }
+// }
+
+
 function takeStock(library, genre){
   if(genre){
     var stock = library.shelves[genre].length;
     return `There are a total of ${stock} ${genre} books at the ${library.name}.`
   } else {
-    var stock = library.shelves['fantasy'].length + library.shelves['fiction'].length + library.shelves['nonFiction'].length;
-    return `There are a total of ${stock} books at the ${library.name}.`
+    var shelves = Object.values(library.shelves)
+    var lengths = shelves.map((shelf)=> {
+      return shelf.length
+    })
+    var sum = lengths.reduce((i, curr) => {
+      return i + curr
+    })
+    return `There are a total of ${sum} books at the ${library.name}.`
   }
 }
+
 
 module.exports = {
   createLibrary,
