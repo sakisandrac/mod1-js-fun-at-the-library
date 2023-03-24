@@ -48,23 +48,32 @@ function checkoutBook(library, title, genre){
   return `Sorry, there are currently no copies of ${title} available at the ${library.name}.`;
 }
 
-function takeStock(library, genre){
-  if(genre === 'fantasy'){
-    var stock = library.shelves.fantasy.length
-    return `There are a total of ${stock} ${genre} books at the ${library.name}.`
-  } 
-  if(genre === 'fiction'){
-    var stock = library.shelves.fiction.length
-    return `There are a total of ${stock} ${genre} books at the ${library.name}.`
-  }
-  if(genre === 'nonFiction'){
-    var stock = library.shelves.nonFiction.length
-    return `There are a total of ${stock} ${genre} books at the ${library.name}.`
-  }
-  var stock = library.shelves['fantasy'].length + library.shelves['fiction'].length + library.shelves['nonFiction'].length
-  return `There are a total of ${stock} books at the ${library.name}.`
-}
+// function takeStock(library, genre){
+//   if(genre === 'fantasy'){
+//     var stock = library.shelves.fantasy.length
+//     return `There are a total of ${stock} ${genre} books at the ${library.name}.`
+//   } 
+//   if(genre === 'fiction'){
+//     var stock = library.shelves.fiction.length
+//     return `There are a total of ${stock} ${genre} books at the ${library.name}.`
+//   }
+//   if(genre === 'nonFiction'){
+//     var stock = library.shelves.nonFiction.length
+//     return `There are a total of ${stock} ${genre} books at the ${library.name}.`
+//   }
+//   var stock = library.shelves['fantasy'].length + library.shelves['fiction'].length + library.shelves['nonFiction'].length
+//   return `There are a total of ${stock} books at the ${library.name}.`
+// }
 
+function takeStock(library, genre){
+  if(genre){
+    var stock = library.shelves[genre].length;
+    return `There are a total of ${stock} ${genre} books at the ${library.name}.`
+  } else {
+    var stock = library.shelves['fantasy'].length + library.shelves['fiction'].length + library.shelves['nonFiction'].length;
+    return `There are a total of ${stock} books at the ${library.name}.`
+  }
+}
 
 module.exports = {
   createLibrary,
